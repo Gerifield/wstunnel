@@ -10,20 +10,6 @@ import (
 	"os"
 )
 
-var wsscontent = `GET /socket.io/?EIO=3&transport=websocket HTTP/1.1
-Host: challenge.0ang3el.tk
-Upgrade: websocket
-Connection: Upgrade
-Sec-WebSocket-Version: 13
-Origin: https://challenge.0ang3el.tk
-Pragma: no-cache
-Cache-Control: no-cache
-Sec-WebSocket-Key: CmWqwJrG/A7aYIsuadq4JA==
-Sec-WebSocket-Version: 13
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11) AppleWebKit/601.1.35 (KHTML, like Gecko) Version/9.0 Safari/601.1
-
-`
-
 func main() {
 	conn, err := tls.Dial("tcp", "challenge.0ang3el.tk:443", &tls.Config{InsecureSkipVerify: true})
 	if err != nil {
