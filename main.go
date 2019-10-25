@@ -43,6 +43,10 @@ func main() {
 	// Proxy mode
 	if *proxyMode {
 		http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+			if *verbose {
+				fmt.Println("proxy request:")
+				r.Write(os.Stdout)
+			}
 			err := r.Write(conn)
 			if err != nil {
 				fmt.Println(err)
@@ -53,6 +57,11 @@ func main() {
 			if err != nil {
 				fmt.Println(err)
 				return
+			}
+
+			if *verbose {
+				fmt.Println("proxy response:")
+				fmt.Println(string(buff[:size]))
 			}
 
 			hj, ok := w.(http.Hijacker)
