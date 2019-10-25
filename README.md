@@ -1,15 +1,13 @@
 # wstunnel
 
-This is a PoC to solve a websocket based challenge from Hacktivity.
-(The original solution was in python, this is a go solution, because I prefer go. :) )
+This is a ~~PoC~~ tool to solve a websocket based challenge from Hacktivity.
+(The original solution was in python, this is go, because I prefer go. :) )
 
 The challenge:
 https://challenge.0ang3el.tk/websocket.html
 
 
-There are more challenges, maybe I'll implement them too!
-
-The logic behind the PoC:
+The logic behind the challenge:
 - There's a service with websocket
 - There's a proxy in front of the websocket app
 - There's a flask app running on the same server
